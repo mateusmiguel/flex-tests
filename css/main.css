@@ -39,8 +39,14 @@ body {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
+.card:hover .card-img {
+    opacity: 0.85;
+    
+}
+
 .card .card-img {
     width: 100%;
+    transition: all .1s ease-in-out;
 }
 
 .card .card-title {
