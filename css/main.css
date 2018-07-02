@@ -62,26 +62,29 @@ body {
 
 .card .card-block .card-sub {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 .card .card-block .card-prof, .card .card-block .card-eq {
     font-size: 11px;
+    margin-top: 10px;
 }
 
 .card .card-prof {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .card .card-footer {
-    padding: 10px;
     background-color: rgba(67, 74, 79, 1);
     text-align: center;
 }
 
 .card .card-footer a {
-    text-decoration: none;
     color: #fff;
     font-size: 11px;
+    text-decoration: none;
     text-transform: uppercase;
+    padding: 10px;
+    display: block;
 }
