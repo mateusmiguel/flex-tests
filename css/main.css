@@ -1,17 +1,29 @@
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #f0f3f4;
     color: #3A3A3A;
     line-height: 1.5;
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cards */
 
 .card-group {
     display: flex;
     flex-wrap: wrap;
 }
-
-/* Cards */
 
 .card {
     min-height: 100%;
@@ -40,8 +52,7 @@ body {
 }
 
 .card:hover .card-img {
-    opacity: 0.85;
-    
+    opacity: 0.9;
 }
 
 .card .card-img {
