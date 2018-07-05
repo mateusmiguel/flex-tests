@@ -3,7 +3,7 @@ var cards = function () {
 
     $('.card-group .card .card-title').each(function () {
         $(this).attr('style', 'height: ');
-        titleLenght.push($(this).outerHeight(true))
+        titleLenght.push($(this).height())
         titleLenght.sort()
     })
 
