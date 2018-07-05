@@ -1,4 +1,11 @@
 var cards = function () {
+
+    function cardCalc(el) {
+        return 'rodei';
+    }
+
+    console.log(cardCalc());
+
     var titleLenght = []
 
     $('.card-group .card .card-title').each(function () {
