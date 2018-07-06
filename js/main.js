@@ -16,8 +16,8 @@ var cards = function () {
         })
     }
 
-    cardCalc('.card-group .card .card-title');
-    cardCalc('.card-group .card .card-sub');
+    cardCalc('.card-group .card .card-title')
+    cardCalc('.card-group .card .card-sub')
 }
 
 window.onload = cards
