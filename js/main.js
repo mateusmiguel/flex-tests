@@ -1,33 +1,23 @@
 var cards = function () {
-    var titleLenght = []
+    function cardCalc(el) {
 
-    $('.card-group .card .card-title').each(function () {
-        $(this).attr('style', 'height: ');
-        titleLenght.push($(this).height())
-        titleLenght.sort()
-    })
+        var lenght = []
 
-    var titleHeight = titleLenght.pop()
+        $(el).each(function () {
+            $(this).attr('style', 'height: ')
+            lenght.push($(this).height())
+            lenght.sort()
+        })
 
-    $('.card-group .card .card-title').each(function () {
-        $(this).attr('style', 'height: ' + titleHeight + 'px')
-    })
+        var height = lenght.pop()
+        
+        $(el).each(function () {
+            $(this).attr('style', 'height: ' + height + 'px')
+        })
+    }
 
-    subtitleLenght = []
-
-    $('.card-group .card .card-sub').each(function () {
-        $(this).attr('style', 'height: ');
-        subtitleLenght.push($(this).outerHeight(true))
-        subtitleLenght.sort()
-    })
-
-    var subtitleHeight = subtitleLenght.pop()
-
-    $('.card-group .card .card-sub').each(function () {
-        $(this).attr('style', 'height: ' + subtitleHeight + 'px')
-    })
-
-    console.log('rodou')
+    cardCalc('.card-group .card .card-title')
+    cardCalc('.card-group .card .card-sub')
 }
 
 window.onload = cards
