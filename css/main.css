@@ -30,8 +30,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* This is necessary to fix a flexbox bug on IE. */
-
 .card-wrap {
     display: flex;
     flex-direction: row;
@@ -65,6 +63,10 @@ body {
 
 .card:hover .card-img {
     opacity: 0.9;
+}
+
+.card:hover .card-footer {
+    opacity: 0.95;
 }
 
 .card .card-img {
@@ -106,16 +108,16 @@ body {
     margin-top: 10px;
 }
 
-.card .card-footer {
-    background-color: rgba(67, 74, 79, 1);
-    text-align: center;
-}
-
 .card .card-footer a {
-    color: #fff;
+    display: block;
     font-size: 11px;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    color: #fff;
+    background-color: rgba(67, 74, 79, 1);
     padding: 10px;
-    display: block;
+}    
+.card .card-footer a:active {
+    opacity: 0.95;
 }
