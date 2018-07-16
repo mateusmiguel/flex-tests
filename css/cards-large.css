@@ -69,14 +69,8 @@ body {
 .card-wrap {
     display: flex;
     flex-direction: row;
-    width: calc(100% * (1/2) - 10px);
     margin: 5px;
-}
-
-@media (min-width: 768px) {
-    .card-wrap {
-        width: calc(100% * (1/4) - 10px);
-    }
+    width: 100%;
 }
 
 .card {
@@ -106,8 +100,13 @@ body {
 }
 
 .card .card-img {
+    background: #3A3A3A;
+}
+
+.card .card-img img {
     width: 100%;
     flex-shrink: 0;
+    vertical-align: middle;
     transition: all .1s ease-in-out;
 }
 
@@ -164,58 +163,45 @@ body {
     opacity: 0.95;
 }
 
-/* List */
-
-.card-wrap-large {
-    width: 100%;
-}
-
-.card-large {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-    top: 0;
-    border-radius: 4px;
-    color: #444;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all .1s ease-in;
-}
-
-.card-large .card-img {
-    width: 100%;
-    flex-shrink: 0;
-    transition: all .1s ease-in-out;
-}
-
-.card-large .card-large__title {}
-
-.card-large .card-large__sub {}
-
-.card-large .card-large__prof {}
-
-.card-large .card-large__eq {}
-
 /*Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {
-    .card-wrap-large {
-        width: calc(100% * (1/2) - 10px);
-    }
-    .card-large {
+    .card {
         flex-direction: row;
+    }
+    .card .card-title {
+        text-align: left;
+        margin: 0 0 10px 0;
+    }
+    .card .card-img {
+        flex: 1;
+    }
+    .card .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+    }
+    .card .card-block {
+        flex: 2;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .card-wrap {
+        width: calc(100% * (1/2) - 10px);
+    }
+}
 
 /* Large devices (desktops, 992px and up) */
 
-@media (min-width: 992px) {}
+/* @media (min-width: 992px) {
+    .card-wrap {
+        width: calc(100% * (1/4) - 10px);
+    }
+} */
 
 /* Extra large devices (large desktops, 1200px and up) */
 

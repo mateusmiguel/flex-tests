@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS Flex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <div class="cards">
+        <div class="card">
+                <div class="card__title"><h2>Título do card</h2></div>
+                <img class="card__img" src="img/img.jpeg" alt="img">        
+            <div class="card__content">
+                <div class="card__desc"><h3>Administração e Economia para Engenharia Avançado Parte II</h3></div>
+                <div class="card__prof"><b>Professores:</b> Paulo Rogerio Martins</div>
+                <div class="card__eq"><b>Disciplina Equivalente:</b> Administração e Economia para Engenheiro</div>
+            </div>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Change position of div with jquery-->
+    <script>
+        var resizeId;
+        $(window).resize(function () {
+            clearTimeout(resizeId);
+            resizeId = setTimeout(doneResizing, 100);
+        });
+
+        function doneResizing() {
+            $(".cards .card").each(function () {
+                if ($(window).width() > 575) {
+                    $(".card__title").insertAfter(".card__img")
+                    console.log('MAIOR QUE ')
+                } else {
+                    $(".card__title").insertBefore(".card__img")
+                    console.log('MENOR')
+                }
+            })
+        }
+    </script>
+</body>
+</html>

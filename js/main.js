@@ -1,4 +1,19 @@
-var cards = function () {
+//Função com setTimeout
+function cards() {
+    // Invert title and img order
+    if ($(window).width() > 574) {
+        $('.card-group .card').each(function () {
+            $(this).find(".card-title").insertBefore($(this).find(".card-sub"))
+        })
+        console.log('576 >')
+    } else {
+        $('.card-group .card').each(function () {
+            $(this).find(".card-title").insertBefore($(this).find(".card-img"))
+        })
+        console.log('575 <')
+    }
+
+    //Recalc card sizes.
     function cardCalc(el) {
 
         var lenght = []
@@ -10,7 +25,7 @@ var cards = function () {
         })
 
         var height = lenght.pop()
-        
+
         $(el).each(function () {
             $(this).attr('style', 'height: ' + height + 'px')
         })
@@ -20,5 +35,12 @@ var cards = function () {
     cardCalc('.card-group .card .card-sub')
 }
 
-window.onload = cards
-window.onresize = cards
+window.onload = cards;
+
+var resizeCard;
+$(window).resize(function () {
+    clearTimeout(resizeCard);
+    resizeCard = setTimeout(function () {
+        cards()
+    }, 250)
+})
