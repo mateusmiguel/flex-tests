@@ -1,19 +1,16 @@
-//Função com setTimeout
 function cards() {
     // Invert title and img order
-    if ($(window).width() > 574) {
+    if ($(window).width() > 560) {
         $('.card-group .card').each(function () {
             $(this).find(".card-title").insertBefore($(this).find(".card-sub"))
         })
-        console.log('576 >')
     } else {
         $('.card-group .card').each(function () {
             $(this).find(".card-title").insertBefore($(this).find(".card-img"))
         })
-        console.log('575 <')
     }
 
-    //Recalc card sizes.
+    //Recalc card sizes
     function cardCalc(el) {
 
         var lenght = []
@@ -42,5 +39,6 @@ $(window).resize(function () {
     clearTimeout(resizeCard);
     resizeCard = setTimeout(function () {
         cards()
+        console.log($(window).width())
     }, 250)
 })
