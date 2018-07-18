@@ -1,12 +1,24 @@
 function cards() {
+
+    //Make clicable
+    let card = '.card-group .card'
+
+    $(card).each(function () {
+        $(this).click(function () {
+            window.location = $(this).find('a').attr('href');
+            return false;
+        })
+    })
+
+
     // Invert title and img order
     if ($(window).width() > 560) {
-        $('.card-group .card').each(function () {
-            $(this).find(".card-title").insertBefore($(this).find(".card-sub"))
+        $(card).each(function () {
+            $(this).find('.card-title').insertBefore($(this).find('.card-sub'))
         })
     } else {
-        $('.card-group .card').each(function () {
-            $(this).find(".card-title").insertBefore($(this).find(".card-img"))
+        $(card).each(function () {
+            $(this).find('.card-title').insertBefore($(this).find('.card-img'))
         })
     }
 
@@ -28,17 +40,18 @@ function cards() {
         })
     }
 
-    cardCalc('.card-group .card .card-title')
-    cardCalc('.card-group .card .card-sub')
+    cardCalc(card + ' .card-title')
+    cardCalc(card + ' .card-sub')
 }
 
-window.onload = cards;
-
-var resizeCard;
+var resizeCard
 $(window).resize(function () {
-    clearTimeout(resizeCard);
+    clearTimeout(resizeCard)
     resizeCard = setTimeout(function () {
         cards()
         console.log($(window).width())
     }, 250)
 })
+
+
+window.onload = cards;
