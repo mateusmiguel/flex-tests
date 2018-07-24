@@ -201,6 +201,10 @@ body {
     .card-large {
         flex-direction: row;
     }
+    .card-large .card-img {
+        width: auto;
+        height: 100%;
+        flex-shrink: 0;
 }
 
 /* Medium devices (tablets, 768px and up) */
