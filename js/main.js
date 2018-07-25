@@ -20,5 +20,13 @@ var cards = function () {
     cardCalc('.card-group .card .card-sub')
 }
 
+var resizeTimer;
+
+$(window).on('resize', function(e) {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    cards()       
+  }, 250);
+});
+
 window.onload = cards
-window.onresize = cards
