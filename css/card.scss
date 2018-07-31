@@ -218,6 +218,17 @@ body {
             position: relative;
             font-weight: 700;
             text-decoration: none;
+            box-sizing: border-box;
+            &:focus {
+                background:silver;
+                
+            }
+            &:hover {
+                &::after {
+                    transform: translate(5px, -65%);
+                    opacity: 1;
+                }
+            }
             &::after {
                 content: '\2192';
                 opacity: 0;
@@ -226,16 +237,6 @@ body {
                 top: 50%;
                 transform: translate(0, -65%);
                 transition: all $duration;
-            }
-            &:focus {
-                border:1px red solid;
-                margin-bottom: -10px;
-            }
-            &:hover {
-                &::after {
-                    transform: translate(5px, -65%);
-                    opacity: 1;
-                }
             }
         }
     }
